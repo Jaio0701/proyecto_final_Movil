@@ -1,0 +1,71 @@
+Objetivos del Proyecto:
+
+- Implementar una interfaz de usuario intuitiva y accesible para diversas funciones de comercio electrónico.
+
+- Desarrollar múltiples pantallas dentro de la aplicación para manejar diferentes aspectos del proceso de compra.
+
+- Asegurar que la aplicación sea responsive y brinde una experiencia de usuario consistente en diferentes dispositivos.
+
+1. Funciones y Características:
+
+- Página de Log In/Registro:
+
+- Campos para ingreso de usuario y contraseña.
+
+- Opciones para registrarse como nuevo usuario.
+
+- Página Principal:
+
+- Menú con categorías de productos.
+
+- Función de búsqueda de productos.
+
+- Productos destacados en un formato visualmente atractivo.
+
+- Catálogo de Productos por Categoría:
+
+- Visualización de productos en un carrusel infinito.
+
+- Cada selección de categoría lleva a su respectivo catálogo de productos.
+
+- Detalle de Productos:
+
+- Imágenes adicionales del producto.
+
+- Descripción detallada y precio.
+
+- Opción para añadir productos al carrito de compras.
+
+- Carrito de Compras:
+
+- Lista de productos seleccionados.
+
+- Función para modificar cantidad o eliminar productos del carrito.
+
+- Simulación de proceso de pago y confirmación de la compra.
+
+2. Flujo de Usuario:
+
+- Los usuarios se registran o inician sesión en la aplicación.
+
+- Navegan por la página principal y exploran diferentes categorías y productos destacados.
+
+- Seleccionan una categoría para ver más productos y usar el carrusel para navegar entre ellos.
+
+- Acceden a los detalles de los productos para obtener más información y pueden agregarlos al carrito.
+
+- Verifican el carrito de compras, hacen ajustes si es necesario y simulan el proceso de compra.
+
+Criterios de Evaluación:
+
+- La aplicación debe ser fácil de navegar y proporcionar un acceso intuitivo a todas las funciones requeridas.
+
+- Todos los elementos interactivos deben responder adecuadamente a la interacción del usuario.
+
+- La simulación del proceso de compra debe completarse sin errores y culminar con una confirmación clara de la compra.
+
+Entregables:
+
+- Código fuente del proyecto en Flutter.
+
+- Documentación de la elaboración del código y del diseño de la interfaz de usuario dentro del Informe final que incluya Introducción, pruebas, problemas encontrados y cómo se solucionaron y conclusiones.
