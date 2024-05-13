@@ -30,6 +30,10 @@ class CategoryList extends StatelessWidget {
     return ListView(
       children: [
         CategoryItem(
+            name: 'General',
+            image: 'assets/images/6.jpg',
+            products: genearlProducts),
+        CategoryItem(
             name: 'Accesorios',
             image: 'assets/images/1.jpg',
             products: perifericosProducts),
@@ -49,10 +53,7 @@ class CategoryList extends StatelessWidget {
             name: 'Computadoras',
             image: 'assets/images/5.jpg',
             products: compuProducts),
-        CategoryItem(
-            name: 'General',
-            image: 'assets/images/6.jpg',
-            products: genearlProducts),
+
         // Agrega más categorías si es necesario
       ],
     );

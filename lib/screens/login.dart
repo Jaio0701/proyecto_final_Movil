@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'home.dart';
+import 'home2.dart';
 import 'signin.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
               _errorMessage,
               style: TextStyle(color: Colors.red),
             ),
-            SizedBox(height: 24.0),
+            SizedBox(height: 14.0),
             ElevatedButton(
               onPressed: () {
                 _login();
@@ -68,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                 if (_loginExitoso) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()),
+                    MaterialPageRoute(builder: (context) => Home2()),
                   );
                 }
               },

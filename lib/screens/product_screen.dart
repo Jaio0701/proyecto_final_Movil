@@ -2,8 +2,9 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/screens/home.dart';
 
-class ProductScreen extends StatelessWidget {
+class ProductScreen extends StatefulWidget {
   final String categoryName;
   final List<Product> products;
 
@@ -12,21 +13,81 @@ class ProductScreen extends StatelessWidget {
       : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
+  _ProductScreen createState() => _ProductScreen();
+}
+
+class _ProductScreen extends State<ProductScreen> {
+  @override
   Widget build(BuildContext context) {
+    final SearchController controller = SearchController();
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          categoryName,
-          style: TextStyle(
-            color: Colors.green, // Cambia el color del texto a verde
-            fontWeight: FontWeight.bold, // Hace que el texto sea negrita
+        title: TextButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Home(),
+              ),
+            );
+          },
+          child: Text(
+            widget.categoryName,
+            style: TextStyle(
+              color: Colors.green, // Cambia el color del texto a verde
+              fontWeight: FontWeight.bold,
+              fontSize: 25, // Hace que el texto sea negrita
+            ),
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () {
+              // Navegar a la pantalla de carrito al hacer clic en el ícono del carrito
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ShoppingCartScreen(),
+                ),
+              );
+            },
+          ),
+          SearchAnchor(
+              searchController: controller,
+              builder: (BuildContext context, SearchController controller) {
+                return IconButton(
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    controller.openView();
+                  },
+                );
+              },
+              suggestionsBuilder:
+                  (BuildContext context, SearchController controller) {
+                return List<ListTile>.generate(widget.products.length,
+                    (int index) {
+                  final String item = widget.products[index].name;
+                  return ListTile(
+                    title: Text(item),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProductDetailScreen(
+                                product: widget.products[index])),
+                      );
+                    },
+                  );
+                });
+              }),
+        ],
       ),
       body: ListView.builder(
-        itemCount: products.length,
+        itemCount: widget.products.length,
         itemBuilder: (context, index) {
-          return ProductItem(product: products[index]);
+          return ProductItem(product: widget.products[index]);
         },
       ),
     );
